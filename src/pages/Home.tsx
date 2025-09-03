@@ -1,8 +1,11 @@
+import Banner from "../components/Banner";
 
 const Home = () => (
   <div>
-    <h1>Bem-vindo ao meu blog!</h1>
-    <p>Este é o meu espaço para compartilhar ideias e projetos.</p>
+    <Banner
+      titulo="Explorando o Mundo"
+      descricao="Junte-se a mim em uma jornada através das maravilhas do mundo."
+    />
   </div>
 );
 

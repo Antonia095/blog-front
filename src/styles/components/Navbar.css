@@ -1,0 +1,92 @@
+.navbar {
+  background-color: #00343d;
+  padding: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 0px;
+  gap: 60px;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.logo-viagem {
+  height: 70px;
+  width: auto;
+}
+.navbar-pages {
+  display: flex;
+  list-style: none;
+  gap: 150px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-pages  li a {
+  text-decoration: none;
+  color: #d8d8da;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: 'TTSupermolot-Bold', 'Arial', sans-serif;
+}
+
+.navbar-pages  li:hover {
+  color: #d8d8da;
+}
+
+.navbar-social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 80px;
+}
+
+.navbar-social .navbar-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  padding: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 5px 20px;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow-x: hidden;
+  }
+  .navbar-logo {
+    margin-bottom: 1rem;
+  }
+  .navbar-pages {
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .navbar-social {
+    margin: 0;
+    justify-content: flex-start;
+  }
+  .navbar-social .navbar-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
