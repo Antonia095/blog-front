@@ -1,0 +1,29 @@
+.content {
+  width: 90%;
+  margin: 30px auto;
+  overflow: hidden;
+  flex: 1; 
+}
+
+.content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cria-post {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cria-post h1 {
+  margin-top: 0;
+  color: #00343d;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
