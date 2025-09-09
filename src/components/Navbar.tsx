@@ -13,6 +13,7 @@ const Navbar = () => {
         <li><Link to="/">Início</Link></li>
         <li><Link to="/viagens">Viagens</Link></li>
         <li><Link to="/sobre">Sobre</Link></li>
+        <li className='navbar-btn'><Link to="/criar-post">Criar Post</Link></li>
       </ul>
     </nav>
   );
