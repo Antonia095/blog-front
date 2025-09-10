@@ -1,0 +1,76 @@
+.editar-post-container {
+  max-width: 900px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 40px 32px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.editar-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.editar-post-form label {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #143c3c;
+  margin-bottom: 8px;
+}
+
+.editar-post-form label::after {
+  content: ' *';
+  color: #b91c1c;
+  font-size: 1.1rem;
+}
+
+.editar-post-form input,
+.editar-post-form textarea {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  background: #fff;
+  transition: border-color 0.2s;
+  margin-bottom: 8px;
+}
+
+.editar-post-form input:focus,
+.editar-post-form textarea:focus {
+  border-color: #143c3c;
+  outline: none;
+}
+
+.editar-post-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.editar-post-form button {
+  background: #00343d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 180px;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+
+.editar-post-form button:disabled {
+  background: #b2c7c7;
+  cursor: not-allowed;
+}
+
+.editar-post-container h2 {
+  font-size: 2.1rem;
+  color: #00343d;
+  font-weight: 700;
+  margin-bottom: 24px;
+}

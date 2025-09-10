@@ -5,6 +5,7 @@ import Sobre from './pages/Sobre';
 import CriaPost from './pages/CriaPost';
 import Postagens from './pages/Postagens';
 import DetalhesPostagem from './pages/DetalhesPostagem';
+import EditarPostagem from './pages/EditarPostagem';
 
 
 const AppRoutes = () => (
@@ -16,6 +17,7 @@ const AppRoutes = () => (
       <Route path="/criar-post" element={<CriaPost />} />
       <Route path="/viagens" element={<Postagens />} />
       <Route path="/viagem/:id" element={<DetalhesPostagem />} />
+      <Route path="/atualizar-postagem/:id" element={<EditarPostagem />} />
     </Routes>
   </Router>
 );

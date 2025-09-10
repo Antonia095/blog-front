@@ -21,6 +21,8 @@
 }
 
 .cria-post h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
   margin-top: 0;
   color: #00343d;
   border-bottom: 2px solid #eee;

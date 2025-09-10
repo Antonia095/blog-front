@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BuscarPostPorId } from '../hooks/BuscarPostPorIdHooks';
-import { atualizarPost } from '../services/postService';
-import '../styles/pages/EditarPost.css';
+import { EditarPostHooks } from '../hooks/EditarPostHooks';
+import '../styles/pages/EditarPostagem.css';
 
-const EditarPost = () => {
+const EditarPostagem = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { post, loading, error } = BuscarPostPorId(Number(id));
+  const { editarPost, loading: saving, error: saveError, success } = EditarPostHooks();
   const [formData, setFormData] = useState({
-    titulo: post?.titulo || '',
-    descricao: post?.descricao || '',
-    imagemUrl: post?.imagemUrl || ''
+    titulo: '',
+    descricao: '',
+    imagemUrl: ''
   });
-  const [saving, setSaving] = useState(false);
-  const [msg, setMsg] = useState('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (post) {
       setFormData({
         titulo: post.titulo,
@@ -33,16 +32,9 @@ const EditarPost = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!post) return;
-    setSaving(true);
-    setMsg('');
-    try {
-      await atualizarPost(post.id, formData);
-      setMsg('Post atualizado com sucesso!');
-      setTimeout(() => navigate(`/postagens`), 1500);
-    } catch {
-      setMsg('Erro ao atualizar post.');
-    } finally {
-      setSaving(false);
+    await editarPost(post.id, formData);
+    if (success) {
+      setTimeout(() => navigate('/viagens'), 1200);
     }
   };
 
@@ -61,10 +53,11 @@ const EditarPost = () => {
         <label>Imagem URL:</label>
         <input name="imagemUrl" value={formData.imagemUrl} onChange={handleChange} />
         <button type="submit" disabled={saving}>Salvar</button>
-        {msg && <p>{msg}</p>}
+        {saveError && <p style={{ color: 'red' }}>{saveError}</p>}
+        {success && <p style={{ color: 'green' }}>Post atualizado com sucesso!</p>}
       </form>
     </div>
   );
 };
 
-export default EditarPost;
+export default EditarPostagem;
