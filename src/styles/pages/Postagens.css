@@ -1,0 +1,44 @@
+.viagens {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00343d;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.postagens-list {
+  list-style: none;
+  padding: 40px;
+  margin: 20px;
+}
+
+.postagens-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #eee;
+  background: transparent;
+}
+
+.postagens-titulo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.postagens-img {
+  width: 260px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.postagens-descricao {
+  color: #333;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}

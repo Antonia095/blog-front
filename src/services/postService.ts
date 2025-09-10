@@ -64,6 +64,18 @@ export const atualizarPost = async (id: number, postData: Post): Promise<PostRes
     }
 };
 
+export const listarPosts = async (): Promise<PostResponse[]> => {
+  try {
+    const response = await api.get<PostResponse[]>('/posts');
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.response) {
+      return Promise.reject(error.response.data);
+    }
+    return Promise.reject({ message: 'Erro de conexão com o servidor.' });
+  }
+};
+
 export const deletarPost = async (id: number): Promise<void> =>{
     try {
       await api.delete(`/posts/${id}`);
