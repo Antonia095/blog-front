@@ -1,0 +1,34 @@
+.home-posts-row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 32px;
+
+}
+.home-post-card {
+  background: #f7f5f5;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 24px;
+}
+
+.home-post-img {
+  width: 90%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.home-post-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #00343d;
+  text-align: center;
+}
