@@ -25,7 +25,7 @@ const DetalhesPostagem = () => {
 
   const handleUpdate = async () => {
     if (!post) return;
-    // Aqui você pode abrir um modal ou navegar para uma página de edição
+  
     navigate(`/atualizar-postagem/${post.id}`);
   };
 
