@@ -23,10 +23,12 @@
 .image-text {
   position: absolute;
   bottom: 0;
-  left: 640px;
-  width: 100%;
-  padding: 90px; 
-  color: #d8d8da; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 40px 5vw;
+  color: #d8d8da;
+  box-sizing: border-box;
 }
 
 .image-text h1 {
@@ -40,4 +42,35 @@
   font-size: 1.5em;
   line-height: 1.5;
   max-width: 800px; 
+}
+
+.image-text h1 {
+  font-size: 3.4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+.image-text p {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.5;
+  max-width: 800px;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .image-text {
+    padding: 24px 2vw;
+    font-size: 1em;
+  }
+  .image-text h1 {
+    font-size: 2em;
+  }
+  .image-text p {
+    font-size: 1em;
+    max-width: 95vw;
+  }
+  .image-container {
+    height: 220px;
+  }
 }
