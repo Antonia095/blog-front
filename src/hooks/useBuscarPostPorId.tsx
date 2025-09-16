@@ -14,7 +14,7 @@ export function BuscarPostPorId(id: number) {
       setError(null);
       try {
         const data = await buscarPosts(id);
-        setPost(data);
+        setPost(data as PostResponse);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);

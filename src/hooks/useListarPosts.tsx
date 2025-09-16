@@ -14,7 +14,7 @@ export function usePostList() {
       setError(null);
       try {
         const data = await listarPosts();
-        setPosts(data);
+        setPosts(data as PostResponse[]);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);

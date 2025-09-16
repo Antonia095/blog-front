@@ -7,7 +7,7 @@ export async function buscarPosts(id: number) {
       const response = await HttpService.get(`/posts/${id}`);
       return response.data;
     } catch (error) {
-      return validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao buscar o post.");
+      throw await validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao buscar o post.");
     }
 };
 
@@ -16,7 +16,7 @@ export async function criarPost(postData: Post) {
       const response = await HttpService.post('/posts', postData);
       return response.data;
     } catch (error) {
-      return validaApiErro(error, "Erro ao criar o post.");
+      throw await validaApiErro(error, "Erro ao criar o post.");
     }
 };
 
@@ -25,7 +25,7 @@ export async function atualizarPost(id: number, postData: Post) {
       const response = await HttpService.put(`/posts/${id}`, postData);
       return response.data;
     } catch (error) {
-      return validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao atualizar o post.");
+      throw await validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao atualizar o post.");
     }
 };
 
@@ -34,7 +34,7 @@ export async function listarPosts() {
     const response = await HttpService.get('/posts');
     return response.data;
   } catch (error) {
-    return validaApiErro(error, "Erro ao listar os posts.");
+    throw await validaApiErro(error, "Erro ao listar os posts.");
   }
 };
 
@@ -42,6 +42,6 @@ export async function deletarPost(id: number) {
     try {
       await HttpService.delete(`/posts/${id}`);
     } catch (error) {
-      return validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao deletar o post.");
+      throw await validaApiErro(error, `Post não encontrado com o ID: ${id}`, "Erro ao deletar o post.");
     }
 };
