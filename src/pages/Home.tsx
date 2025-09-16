@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import { usePostList } from '../hooks/ListarPostsHooks';
+import { usePostList } from '../hooks/useListarPosts';
 import { useNavigate } from 'react-router-dom';
 import '../styles/pages/Home.css';
 

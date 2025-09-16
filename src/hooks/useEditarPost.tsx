@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { atualizarPost } from '../services/postService';
+import { atualizarPost } from '../services/Api/postsApi';
 import type { Post } from '../types/Post';
 
 export function EditarPostHooks() {

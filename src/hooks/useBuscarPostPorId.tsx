@@ -1,36 +1,32 @@
 import { useState, useEffect } from 'react';
-import { listarPosts } from '../services/postService';
+import { buscarPosts } from '../services/Api/postsApi';
 import type { PostResponse } from '../types/Post';
 
-export function usePostList() {
-  const [posts, setPosts] = useState<PostResponse[]>([]);
+export function BuscarPostPorId(id: number) {
+  const [post, setPost] = useState<PostResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
- 
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    if (id === undefined || id === null) return;
+    const fetchPost = async () => {
       setLoading(true);
       setError(null);
       try {
-        const data = await listarPosts();
-        setPosts(data);
+        const data = await buscarPosts(id);
+        setPost(data as PostResponse);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
         } else {
-          setError('Erro ao buscar posts.');
+          setError('Erro ao buscar post.');
         }
       } finally {
         setLoading(false);
       }
     };
-    fetchPosts();
-  }, []);
+    fetchPost();
+  }, [id]);
 
-  return {
-    posts,
-    loading,
-    error 
-  };
+  return { post, loading, error };
 }

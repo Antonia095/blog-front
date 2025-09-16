@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { FormEvent } from 'react';
-import { criarPost } from "../services/postService";
+import { criarPost } from "../services/Api/postsApi";
 import type { Post, PostErrors } from "../types/Post";
 import { validarPost }  from "../utils/validacaoPost";
 
