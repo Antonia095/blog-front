@@ -1,5 +1,5 @@
 import PostForm from './formulario/PostForm';
-import { CriarPostHooks } from '../hooks/CriarPostHooks';
+import { CriarPostHooks } from '../hooks/useCriarPost';
 import '../styles/pages/CriaPost.css';
 
 const CriaPost = () => {

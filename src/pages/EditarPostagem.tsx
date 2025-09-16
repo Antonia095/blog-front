@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { BuscarPostPorId } from '../hooks/BuscarPostPorIdHooks';
-import { EditarPostHooks } from '../hooks/EditarPostHooks';
+import { BuscarPostPorId } from '../hooks/useBuscarPostPorId';
+import { EditarPostHooks } from '../hooks/useEditarPost';
 import '../styles/pages/EditarPostagem.css';
 
 const EditarPostagem = () => {

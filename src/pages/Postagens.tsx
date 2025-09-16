@@ -1,4 +1,4 @@
-import { usePostList } from '../hooks/ListarPostsHooks';
+import { usePostList } from '../hooks/useListarPosts';
 import '../styles/pages/Postagens.css';
 
 const Postagens = () => {
